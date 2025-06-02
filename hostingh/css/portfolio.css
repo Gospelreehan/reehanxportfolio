@@ -474,7 +474,8 @@ font-size: 1.3em;
     }
     .inpbox input{
         padding: 0.5em 1em;
-    } */@media (max-width: 768px) {
+    } */
+     @media (max-width: 768px) {
 
     section {
         padding: 4em 5%; /* Reduced padding for small screens */
@@ -610,16 +611,34 @@ font-size: 1.3em;
     }
 
     .boxs a img {
-        width: 100%; /* Make images responsive */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 200px; /* Limit height for mobile */
-        object-fit: cover; /* Ensure images scale nicely */
-        border-radius: 8px; /* Optional: rounded corners for style */
+        width: 100%; /* Full width of the parent box */
+        height: auto; /* Maintain aspect ratio to prevent stretching */
+        max-height: 250px; /* Cap height to avoid overly large images */
+        object-fit: cover; /* Scale image to cover area, cropping if needed */
+        border-radius: 10px; /* Rounded corners for a polished look */
+        display: block; /* Ensure proper block-level rendering */
+        margin: 0 auto; /* Center the image if needed */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     }
 
-    /* Adjust the temperature box if needed */
-    .boxs:nth-child(6) {
-        margin-bottom: 20px; /* Extra space at the end of the section */
+    /* Optional: Hover effect for interactivity (if supported on mobile) */
+    .boxs a img:hover {
+        opacity: 0.9; /* Slight fade on hover/tap for feedback */
+        transform: scale(1.02); /* Subtle zoom effect */
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+
+    /* Fix for calculator box with h1 tag */
+    .boxs h1 a img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
     }
 
     footer {
@@ -628,7 +647,7 @@ font-size: 1.3em;
         align-items: center;
         text-align: center;
     }
-}
+
 
    
 
