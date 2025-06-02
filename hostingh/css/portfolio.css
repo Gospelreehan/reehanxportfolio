@@ -450,7 +450,7 @@ font-size: 1.3em;
         font-size: 3em;
     }
 }
-@media(max-width:768px){
+/* @media(max-width:768px){
     #home h1{
         font-size: 2.5em;
     }
@@ -474,7 +474,107 @@ font-size: 1.3em;
     }
     .inpbox input{
         padding: 0.5em 1em;
+    } */@media (max-width: 768px) {
+
+    section {
+        padding: 4em 5%; /* Reduced padding for small screens */
     }
+
+    nav .btn {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .link {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1em;
+        color: white;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .link.active {
+        display: flex; /* Use flex to stack links */
+    }
+
+    .link a {
+        margin: 1.5em 0;
+        font-size: 1.2em;
+        color: white;
+    }
+
+    #home h1 {
+        font-size: 2.2em;
+    }
+
+    #home h3 {
+        font-size: 1.2em;
+    }
+
+    #home img {
+        width: 60%; /* More mobile-friendly */
+        margin: 1em auto;
+        display: block;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #about img {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+
+    #about h1 {
+        font-size: 2.2em;
+    }
+
+    #about p,
+    .skills ul {
+        font-size: 1.2em;
+    }
+
+    .skills {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    #services .header,
+    #contact .header {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #contact .inpbox span {
+        font-size: 1em;
+    }
+
+    .inpbox input {
+        padding: 0.5em;
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2em;
+        align-items: center;
+        text-align: center;
+    }
+}
+
     footer{
         flex-direction: column;
         gap: 5em;
