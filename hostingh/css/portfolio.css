@@ -566,6 +566,61 @@ font-size: 1.3em;
         padding: 0.5em;
         width: 100%;
     }
+    .projects {
+        padding: 20px; /* Reduce padding for mobile */
+    }
+
+    /* Style the heading section */
+    .heading {
+        text-align: center;
+    }
+
+    .heading span {
+        font-size: 1.2rem; /* Smaller font for mobile */
+    }
+
+    .heading h3 {
+        font-size: 1.8rem; /* Adjust heading size */
+        margin: 10px 0; /* Reduce margin */
+    }
+
+    /* Make the box container use flexbox and stack vertically */
+    .box-cont {
+        display: flex;
+        flex-direction: column; /* Stack boxes vertically */
+        gap: 20px; /* Space between boxes */
+        align-items: center; /* Center boxes horizontally */
+    }
+
+    /* Style each project box */
+    .boxs {
+        width: 90%; /* Take most of the screen width */
+        max-width: 350px; /* Cap the width for better control */
+        text-align: center; /* Center text inside boxes */
+    }
+
+    .boxs h3 {
+        font-size: 1.5rem; /* Smaller heading for project titles */
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    /* Fix the misplaced h1 tag and style images */
+    .boxs h1 {
+        margin: 0; /* Remove default margin from h1 */
+    }
+
+    .boxs a img {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 200px; /* Limit height for mobile */
+        object-fit: cover; /* Ensure images scale nicely */
+        border-radius: 8px; /* Optional: rounded corners for style */
+    }
+
+    /* Adjust the temperature box if needed */
+    .boxs:nth-child(6) {
+        margin-bottom: 20px; /* Extra space at the end of the section */
+    }
 
     footer {
         flex-direction: column;
@@ -575,12 +630,8 @@ font-size: 1.3em;
     }
 }
 
-    footer{
-        flex-direction: column;
-        gap: 5em;
-        align-items: baseline;
-    }
-}
+   
+
 .projects .heading{
     text-align: center;
     margin-bottom: 2rem;
