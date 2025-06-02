@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>To-Do App</h1>
+
+    <!-- Add New Task Section -->
+    <div class="add-task">
+      <input type="text" id="newTaskInput" placeholder="Add a new task">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Pending Tasks -->
+    <div class="task-list" id="pendingTasks">
+      <h2>Pending Tasks</h2>
+      <ul id="pendingTaskList"></ul>
+    </div>
+
+    <!-- Completed Tasks -->
+    <div class="task-list" id="completedTasks">
+      <h2>Completed Tasks</h2>
+      <ul id="completedTaskList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <style>
+    
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-task {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.add-task button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-task button:hover {
+  background-color: #45a049;
+}
+
+.task-list {
+  margin-bottom: 30px;
+}
+
+.task-list h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button.edit {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+}
+
+button.complete {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+button.delete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+  </style>
+  <script>
+let taskIdCounter = 0; // For generating unique task IDs
+
+// Function to add a new task
+function addTask() {
+  const taskText = document.getElementById("newTaskInput").value.trim();
+
+  if (taskText === "") {
+    alert("Please enter a task.");
+    return;
+  }
+
+  // Create task object
+  const task = {
+    id: taskIdCounter++,
+    text: taskText,
+    completed: false,
+    createdAt: new Date(),
+  };
+
+  // Add task to pending list
+  addTaskToList(task);
+
+  // Clear input field
+  document.getElementById("newTaskInput").value = "";
+}
+
+// Function to add a task to the task list (either pending or completed)
+function addTaskToList(task) {
+  const taskList = task.completed ? document.getElementById("completedTaskList") : document.getElementById("pendingTaskList");
+
+  const listItem = document.createElement("li");
+  listItem.id = `task-${task.id}`;
+  listItem.innerHTML = `
+    <span class="${task.completed ? "completed" : ""}">${task.text}</span>
+    <div class="actions">
+      <button class="complete" onclick="markComplete(${task.id})">Complete</button>
+      <button class="edit" onclick="editTask(${task.id})">Edit</button>
+      <button class="delete" onclick="deleteTask(${task.id})">Delete</button>
+    </div>
+  `;
+
+  taskList.appendChild(listItem);
+}
+
+// Function to mark a task as completed
+function markComplete(taskId) {
+  const task = getTaskById(taskId);
+
+  if (!task) return;
+
+  task.completed = true;
+  task.completedAt = new Date();
+
+  // Move task to completed list
+  removeTaskFromList(taskId);
+  addTaskToList(task);
+}
+
+// Function to edit a task's text
+function editTask(taskId) {
+  const task = getTaskById(taskId);
+
+  if (!task) return;
+
+  const newText = prompt("Edit Task:", task.text);
+
+  if (newText !== null && newText.trim() !== "") {
+    task.text = newText.trim();
+
+    // Update task list
+    const taskElement = document.getElementById(`task-${taskId}`);
+    taskElement.querySelector("span").textContent = task.text;
+  }
+}
+
+// Function to delete a task
+function deleteTask(taskId) {
+  const task = getTaskById(taskId);
+
+  if (!task) return;
+
+  removeTaskFromList(taskId);
+}
+
+// Function to remove task from the list
+function removeTaskFromList(taskId) {
+  const taskElement = document.getElementById(`task-${taskId}`);
+  if (taskElement) {
+    taskElement.remove();
+  }
+}
+
+// Function to retrieve a task by ID
+function getTaskById(taskId) {
+  const taskList = document.getElementById("pendingTaskList").children;
+  let task = null;
+
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id === `task-${taskId}`) {
+      task = taskList[i];
+      break;
+    }
+  }
+
+  if (!task) {
+    const completedList = document.getElementById("completedTaskList").children;
+    for (let i = 0; i < completedList.length; i++) {
+      if (completedList[i].id === `task-${taskId}`) {
+        task = completedList[i];
+        break;
+      }
+    }
+  }
+
+  return task ? {
+    id: taskId,
+    text: task.querySelector("span").textContent,
+    completed: task.querySelector("span").classList.contains("completed"),
+  } : null;
+}
+
+
+  </script>
+</body>
+</html>

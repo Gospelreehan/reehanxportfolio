@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Company</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gaming Company</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            
+            <img style="height: 100%;width:100% ; " src="https://wallpaperaccess.com/full/2188658.jpg" alt="">
+            <div class="hero-text">
+                <h2>Welcome to the Ultimate Gaming Experience</h2>
+                <p>Dive into the world of endless adventures and thrilling games.</p>
+                <a href="#games" class="cta-button">Explore Games</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a leading gaming company dedicated to bringing you the best gaming experiences. Our games are crafted with passion and precision to ensure maximum enjoyment.</p>
+        </section>
+
+        <section id="games">
+            <h2>Our Games</h2>
+            <div class="game">
+                <h3>Game Title 1</h3>
+                <p>Action-packed adventure game.</p>
+            </div>
+            <div class="game">
+                <h3>Game Title 2</h3>
+                <p>Strategic puzzle game that challenges your mind.</p>
+            </div>
+            <div class="game">
+                <h3>Game Title 3</h3>
+                <p>Exciting multiplayer shooter game.</p>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <p>"Best gaming experience ever!" - Player 1</p>
+            </div>
+            <div class="testimonial">
+                <p>"Incredible graphics and gameplay." - Player 2</p>
+            </div>
+            <div class="testimonial">
+                <p>"Can't stop playing!" - Player 3</p>
+            </div>
+        </section>
+
+        <section id="subscribe">
+            <h2>Subscribe to our Newsletter</h2>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Gaming Company. All rights reserved.</p>
+        <p>Follow us on social media: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+    </footer>
+</body>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+#hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cta-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5em 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+section {
+    padding: 2em;
+    text-align: center;
+}
+
+.game, .testimonial {
+    margin: 2em 0;
+}
+
+form input, form textarea {
+    display: block;
+    width: 80%;
+    margin: 1em auto;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+button {
+    padding: 0.5em 2em;
+    font-size: 1em;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+</style>
+</html>
