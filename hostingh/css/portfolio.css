@@ -585,12 +585,12 @@ font-size: 1.3em;
         margin: 10px 0; /* Reduce margin */
     }
 
-    /* Make the box container use flexbox and stack vertically */
+    y
     .box-cont {
         display: flex;
         flex-direction: column; /* Stack boxes vertically */
         gap: 20px; /* Space between boxes */
-        align-items: center; /* Center boxes horizontally */
+        align-items: center; 
     }
 
     /* Style each project box */
@@ -659,7 +659,7 @@ font-size: 1.3em;
         max-width: 100%; /* Ensure images are responsive */
         height: auto; /* Maintain aspect ratio */
         border-radius: 8px; /* Keep rounded corners */
-    }
+    } *
     .skills {
         flex-direction: column;
         gap: 2em;
