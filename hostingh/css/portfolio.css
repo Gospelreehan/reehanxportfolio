@@ -658,6 +658,13 @@ font-size: 1.3em;
         display: inline-block; /* Ensures proper alignment */
         vertical-align: middle; /* Keeps alignment consistent */
     }
+    .skills ul {
+        font-size: 1em; /* Reduce font size */
+        flex-direction: column; /* Stack list items vertically */
+        align-items: center; /* Center align items */
+        gap: 1em; /* Adjust spacing */
+        text-align: center; /* Improve readability */
+    }
     }
 
     footer {
