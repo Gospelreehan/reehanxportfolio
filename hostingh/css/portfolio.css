@@ -639,6 +639,27 @@ font-size: 1.3em;
         margin: 0 auto;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+     .box-cont {
+        flex-direction: column; /* Stack all boxes */
+        align-items: center; /* Center-align boxes */
+        gap: 15px; /* Adjust spacing between boxes */
+    }
+
+    .boxs {
+        width: 100%; /* Take full width */
+        max-width: 400px; /* Cap the width */
+        text-align: center; /* Center content */
+    }
+
+    .boxs h3 {
+        font-size: 1.3rem; /* Reduce font size */
+    }
+
+    .boxs a img {
+        max-width: 100%; /* Ensure images are responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Keep rounded corners */
+    }
     .skills {
         flex-direction: column;
         gap: 2em;
