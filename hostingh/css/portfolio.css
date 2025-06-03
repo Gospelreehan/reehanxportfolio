@@ -585,81 +585,17 @@ font-size: 1.3em;
         margin: 10px 0; /* Reduce margin */
     }
 
-    y
+    
     .box-cont {
-        display: flex;
-        flex-direction: column; /* Stack boxes vertically */
-        gap: 20px; /* Space between boxes */
-        align-items: center; 
-    }
-
-    /* Style each project box */
-    .boxs {
-        width: 90%; /* Take most of the screen width */
-        max-width: 350px; /* Cap the width for better control */
-        text-align: center; /* Center text inside boxes */
-    }
-
-    .boxs h3 {
-        font-size: 1.5rem; /* Smaller heading for project titles */
-        margin: 10px 0; /* Adjust margin */
-    }
-
-    /* Fix the misplaced h1 tag and style images */
-    .boxs h1 {
-        margin: 0; /* Remove default margin from h1 */
-    }
-
-    .boxs a img {
-        width: 100%; /* Full width of the parent box */
-        height: auto; /* Maintain aspect ratio to prevent stretching */
-        max-height: 250px; /* Cap height to avoid overly large images */
-        object-fit: cover; /* Scale image to cover area, cropping if needed */
-        border-radius: 10px; /* Rounded corners for a polished look */
-        display: block; /* Ensure proper block-level rendering */
-        margin: 0 auto; /* Center the image if needed */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    }
-
-    /* Optional: Hover effect for interactivity (if supported on mobile) */
-    .boxs a img:hover {
-        opacity: 0.9; /* Slight fade on hover/tap for feedback */
-        transform: scale(1.02); /* Subtle zoom effect */
-        transition: all 0.3s ease; /* Smooth transition */
-    }
-
-    /* Fix for calculator box with h1 tag */
-    .boxs h1 a img {
-        width: 100%;
-        height: auto;
-        max-height: 250px;
-        object-fit: cover;
-        border-radius: 10px;
-        display: block;
-        margin: 0 auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-     .box-cont {
-        flex-direction: column; /* Stack all boxes */
-        align-items: center; /* Center-align boxes */
-        gap: 15px; /* Adjust spacing between boxes */
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
     .boxs {
-        width: 100%; /* Take full width */
-        max-width: 400px; /* Cap the width */
-        text-align: center; /* Center content */
+        width: 90%;
+        max-width: 400px;
     }
-
-    .boxs h3 {
-        font-size: 1.3rem; /* Reduce font size */
-    }
-
-    .boxs a img {
-        max-width: 100%; /* Ensure images are responsive */
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 8px; /* Keep rounded corners */
-    } *
     .skills {
         flex-direction: column;
         gap: 2em;
